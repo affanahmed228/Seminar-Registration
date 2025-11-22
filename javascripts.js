@@ -1,3 +1,4 @@
+
 // Camera Registration Application for GitHub Pages + Supabase
 class CameraRegistrationApp {
     constructor() {
@@ -17,8 +18,10 @@ class CameraRegistrationApp {
     
     initSupabase() {
         // You'll update these with your actual Supabase credentials
-        const supabaseUrl = 'YOUR_SUPABASE_URL_HERE';
-        const supabaseKey = 'YOUR_SUPABASE_ANON_KEY_HERE';
+    import { createClient } from '@supabase/supabase-js'
+    const supabaseUrl = 'https://oecfvbacyrrenbulaxwq.supabase.co'
+    const supabaseKey = process.env.SUPABASE_KEY
+    const supabase = createClient(supabaseUrl, supabaseKey)
         
         this.supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
         console.log('Supabase initialized');
